@@ -3,10 +3,16 @@
 [ext_resource type="Script" uid="uid://crvn7uedtouj" path="res://Scripts/Tasks/task_object.gd" id="1_tvigl"]
 [ext_resource type="Texture2D" uid="uid://u34q3balvplg" path="res://Graphics/wirecutter.png" id="1_w4vfa"]
 
-[node name="wirecutter" type="Node2D" unique_id=1076052491]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvigl"]
+radius = 8.0
+
+[node name="wirecutter" type="CharacterBody2D" unique_id=1245148660]
 script = ExtResource("1_tvigl")
 item_id = "wirecutter"
 required_task_index = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1897964454]
 texture = ExtResource("1_w4vfa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=399344007]
+shape = SubResource("CircleShape2D_tvigl")

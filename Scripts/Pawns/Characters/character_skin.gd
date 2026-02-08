@@ -1,28 +1,25 @@
 extends Sprite2D
 
-var switch_walk: bool = false
-
-@onready var animation_tree: AnimationTree =  $AnimationTree
-@onready var walk_length: float = $AnimationPlayer.get_animation("walk_down").length
-@export var hframes_set: int = 3:
-	set(value):
-		hframes_set = value
-		hframes = value
-		
-
-
+@onready var animation_tree: AnimationTree = $AnimationTree
+# Get the playback object immediately so we can use it later
+@onready var state_machine = animation_tree["parameters/StateMachine/playback"]
 
 func set_animation_speed(value: float) -> void:
 	animation_tree.set("parameters/TimeScale/scale", value)
 
-func toggle_walk_side() -> void:
-	switch_walk = !switch_walk
-
-func play_walk_animation() -> void:
-	animation_tree["parameters/StateMachine/playback"].start("Walk1" if switch_walk else "Walk0")
-	animation_tree.advance(0)
-
 func set_animation_direction(input_direction: Vector2) -> void:
+	# Set the Blend Position for all states so transitions are smooth
 	animation_tree.set("parameters/StateMachine/Idle/blend_position", input_direction)
-	animation_tree.set("parameters/StateMachine/Walk1/blend_position", input_direction)
 	animation_tree.set("parameters/StateMachine/Walk0/blend_position", input_direction)
+	# If you have Walk1, set it too, just in case
+	animation_tree.set("parameters/StateMachine/Walk1/blend_position", input_direction)
+
+func set_moving(is_moving: bool) -> void:
+	if is_moving:
+		# only travel to Walk if we aren't already there
+		if state_machine.get_current_node() != "Walk0":
+			state_machine.travel("Walk0")
+	else:
+		# only travel to Idle if we aren't already there
+		if state_machine.get_current_node() != "Idle":
+			state_machine.travel("Idle")

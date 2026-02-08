@@ -230,9 +230,13 @@ _data = {
 &"walk_up_alt": SubResource("Animation_2m2sl")
 }
 
-[node name="Player" type="Node2D" unique_id=2073821595]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5pnro"]
+radius = 3.0400465
+height = 21.944168
+
+[node name="Node2D" type="CharacterBody2D" unique_id=2027071675]
+scale = Vector2(1.6447117, 1.6447117)
 script = ExtResource("1_cghlj")
-speed = 2.5
 
 [node name="Skin" type="Sprite2D" parent="." unique_id=178690615]
 position = Vector2(0, -4.25)
@@ -259,3 +263,7 @@ parameters/StateMachine/Idle/blend_position = Vector2(0, 1)
 parameters/StateMachine/Walk0/blend_position = Vector2(0, 1)
 parameters/StateMachine/Walk1/blend_position = Vector2(0, 1)
 parameters/TimeScale/scale = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1958072431]
+position = Vector2(0, -5.5)
+shape = SubResource("CapsuleShape2D_5pnro")
