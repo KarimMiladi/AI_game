@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dglkrraaw31qg"]
+
+[ext_resource type="Texture2D" uid="uid://b6pg2rprtrbkv" path="res://house_tileset/PC _ Computer - Omori -PC.png" id="1_edhg1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00apd"]
+size = Vector2(16, 18)
+
+[sub_resource type="Gradient" id="Gradient_edhg1"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_00apd"]
+gradient = SubResource("Gradient_edhg1")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0.012152778, 1)
+
+[node name="AM" type="StaticBody2D" unique_id=1515716866]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1173571429]
+position = Vector2(-2, -3)
+shape = SubResource("RectangleShape2D_00apd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1952390352]
+texture = ExtResource("1_edhg1")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=925519935]
+position = Vector2(-2.5000002, -2.000001)
+scale = Vector2(0.23437499, 0.21874997)
+color = Color(4.042983e-06, 0.80099344, 0.8038704, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_00apd")

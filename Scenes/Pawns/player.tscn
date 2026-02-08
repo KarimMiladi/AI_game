@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://82egl20vpf7n"]
 
 [ext_resource type="Script" uid="uid://brhhotcc8gfs3" path="res://Scripts/Pawns/Characters/player.gd" id="1_cghlj"]
-[ext_resource type="Texture2D" uid="uid://7yg5qkavv4pi" path="res://Graphics/Pawns/SaraFullSheet.png" id="2_tlhq4"]
+[ext_resource type="Texture2D" uid="uid://du8dixpr83kqh" path="res://Graphics/Pawns/SaraFullSheet.png" id="2_tlhq4"]
 [ext_resource type="Script" uid="uid://l4teq1kjwlso" path="res://Scripts/Pawns/Characters/character_skin.gd" id="3_tlhq4"]
-[ext_resource type="AnimationNodeBlendTree" uid="uid://bs572imkrcg0e" path="res://Resources/Animations/new_animation_node_blend_tree.tres" id="5_tlhq4"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://bh7w86y0fn5hw" path="res://Resources/Animations/new_animation_node_blend_tree.tres" id="5_tlhq4"]
 
 [sub_resource type="Animation" id="Animation_6qq7k"]
 resource_name = "RESET"
@@ -234,7 +234,7 @@ _data = {
 radius = 3.0400465
 height = 21.944168
 
-[node name="Node2D" type="CharacterBody2D" unique_id=2027071675]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2027071675]
 scale = Vector2(1.6447117, 1.6447117)
 script = ExtResource("1_cghlj")
 
@@ -248,7 +248,6 @@ vframes = 4
 frame = 7
 region_rect = Rect2(0, 0, 64, 64)
 script = ExtResource("3_tlhq4")
-hframes_set = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Skin" unique_id=2085302794]
 root_node = NodePath("../..")

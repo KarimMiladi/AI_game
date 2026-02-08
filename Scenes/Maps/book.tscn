@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://fkia1vlm1kt6"]
+
+[ext_resource type="Texture2D" uid="uid://d1dml1x0v2h5k" path="res://book.png" id="1_5iav2"]
+[ext_resource type="Script" uid="uid://c8iymkwdd3xof" path="res://Scenes/Maps/book.gd" id="1_d5yw1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5yw1"]
+radius = 20.22375
+
+[node name="Book" type="Area2D" unique_id=1892393427]
+script = ExtResource("1_d5yw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2075167282]
+shape = SubResource("CircleShape2D_d5yw1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2117832335]
+scale = Vector2(0.110047854, 0.110047854)
+texture = ExtResource("1_5iav2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

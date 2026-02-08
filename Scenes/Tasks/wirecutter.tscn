@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://u34q3balvplg" path="res://Graphics/wirecutter.png" id="1_w4vfa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tvigl"]
-radius = 8.0
+radius = 16.0
 
 [node name="wirecutter" type="CharacterBody2D" unique_id=1245148660]
 script = ExtResource("1_tvigl")
