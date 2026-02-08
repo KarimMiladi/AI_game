@@ -33782,10 +33782,12 @@ position = Vector2(624, 853)
 [node name="Book" parent="." unique_id=1892393427 instance=ExtResource("6_yclys")]
 z_index = 1
 position = Vector2(1116, 857)
+unique_id = "a"
 
 [node name="Book2" parent="." unique_id=604848419 instance=ExtResource("6_yclys")]
 z_index = 1
 position = Vector2(553, 875)
+unique_id = "b"
 
 [node name="Player" parent="." unique_id=1726753138 instance=ExtResource("5_3aceu")]
 z_index = 1

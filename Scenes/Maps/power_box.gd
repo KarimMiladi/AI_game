@@ -8,6 +8,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if (player_inside and Input.is_action_just_pressed("interact") and GameManager.task == 2):
+		GameManager.task +=1
+		Global.complete_task()
 		print("wires cut")
 
 func _on_body_entered(body: CharacterBody2D) -> void:

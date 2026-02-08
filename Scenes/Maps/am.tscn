@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dglkrraaw31qg"]
 
+[ext_resource type="Script" uid="uid://bqgrpwammnvjs" path="res://Scripts/Pawns/Characters/npc.gd" id="1_00apd"]
 [ext_resource type="Texture2D" uid="uid://b6pg2rprtrbkv" path="res://house_tileset/PC _ Computer - Omori -PC.png" id="1_edhg1"]
+[ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://custom_balloon/example_balloon.tscn" id="2_2dkq8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00apd"]
 size = Vector2(16, 18)
@@ -12,13 +14,18 @@ gradient = SubResource("Gradient_edhg1")
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0.012152778, 1)
 
-[node name="AM" type="StaticBody2D" unique_id=1515716866]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2dkq8"]
+radius = 28.0
+
+[node name="AM" type="CharacterBody2D" unique_id=264762329]
+script = ExtResource("1_00apd")
+balloon_scene = ExtResource("2_2dkq8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1173571429]
 position = Vector2(-2, -3)
 shape = SubResource("RectangleShape2D_00apd")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1952390352]
+[node name="Skin" type="Sprite2D" parent="." unique_id=1952390352]
 texture = ExtResource("1_edhg1")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=925519935]
@@ -27,3 +34,11 @@ scale = Vector2(0.23437499, 0.21874997)
 color = Color(4.042983e-06, 0.80099344, 0.8038704, 1)
 energy = 1.5
 texture = SubResource("GradientTexture2D_00apd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=523653877]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=673203534]
+shape = SubResource("CircleShape2D_2dkq8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

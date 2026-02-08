@@ -25189,6 +25189,7 @@ shape = SubResource("CircleShape2D_5d3cr")
 [node name="Book" parent="." unique_id=1892393427 instance=ExtResource("2_vi0o0")]
 z_index = 1
 position = Vector2(580, 271)
+unique_id = "deaht_note"
 
 [node name="Player" parent="." unique_id=1726753138 instance=ExtResource("4_x3qwm")]
 z_index = 1

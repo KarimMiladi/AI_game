@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 GameManager="*uid://brhjkx6kvk5a"
 Music="*uid://c6408j305gxka"
 Fade="*uid://75hjadtlu2c7"
+DialogueManager="*uid://c3rodes2l3gxb"
+Global="*uid://ds6nntgf560oa"
 
 [editor_plugins]
 

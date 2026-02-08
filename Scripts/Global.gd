@@ -81,3 +81,14 @@ func _start_phone_delay():
 	
 	get_tree().root.add_child(phone_scene)
 	phone_scene.start_encounter()
+
+
+# A permanent list of object IDs that have been picked up
+var collected_objects_registry: Array = []
+
+func register_object_collected(id: String) -> void:
+	if id != "" and not id in collected_objects_registry:
+		collected_objects_registry.append(id)
+
+func is_object_collected(id: String) -> bool:
+	return id in collected_objects_registry
