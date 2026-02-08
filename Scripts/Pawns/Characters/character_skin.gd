@@ -4,6 +4,13 @@ var switch_walk: bool = false
 
 @onready var animation_tree: AnimationTree =  $AnimationTree
 @onready var walk_length: float = $AnimationPlayer.get_animation("walk_down").length
+@export var hframes_set: int = 3:
+	set(value):
+		hframes_set = value
+		hframes = value
+		
+
+
 
 func set_animation_speed(value: float) -> void:
 	animation_tree.set("parameters/TimeScale/scale", value)

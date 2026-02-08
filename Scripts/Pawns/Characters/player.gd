@@ -10,7 +10,19 @@ const MOVEMENTS: Dictionary = {
 var input_history: Array[String] = []
 var cur_direction: Vector2i = Vector2i.DOWN
 
+
+func _ready():
+	Global.dialogue_toggled.connect(set_talking)
+
+
 func _process(_delta) -> void:
+	
+	# --- NEW ADDITION: STOP if dialogue is open ---
+	if Global.is_dialogue_active:
+		return
+	# ----------------------------------------------
+	
+	
 	input_priority()
 	
 	if can_move():

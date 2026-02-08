@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://babywoj83n2ou"]
+
+[ext_resource type="Texture2D" uid="uid://bm8b5ndsw6ckk" path="res://icon.svg" id="1_0xj07"]
+[ext_resource type="Script" uid="uid://chxei8o8jbkc3" path="res://Scripts/Tasks/task_zone.gd" id="1_wifqm"]
+
+[node name="Bin" type="Node2D" unique_id=543210471]
+script = ExtResource("1_wifqm")
+finishes_task = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=744299417]
+scale = Vector2(0.143, 0.143)
+texture = ExtResource("1_0xj07")

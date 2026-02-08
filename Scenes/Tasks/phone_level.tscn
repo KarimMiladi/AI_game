@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://c4apnohgjc6gi"]
+
+[ext_resource type="Script" uid="uid://bbv4ra6wu1kk4" path="res://Scripts/Tasks/phone_level.gd" id="1_5gjcg"]
+[ext_resource type="Texture2D" uid="uid://bm8b5ndsw6ckk" path="res://icon.svg" id="1_ugfg3"]
+
+[node name="PhoneLevel" type="CanvasLayer" unique_id=1630140532]
+script = ExtResource("1_5gjcg")
+
+[node name="BackgroundDimmer" type="ColorRect" parent="." unique_id=1988508317]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05882353, 0.05882353, 0.05882353, 0.27450982)
+
+[node name="TimerContainer" type="MarginContainer" parent="." unique_id=1080985742]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="StressTimer" type="ProgressBar" parent="TimerContainer" unique_id=708162446]
+custom_minimum_size = Vector2(800, 28)
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="TimerContainer/StressTimer" unique_id=1425135092]
+layout_mode = 0
+offset_left = 334.0
+offset_right = 467.0
+offset_bottom = 23.0
+text = "TIME REMAINING"
+
+[node name="PhoneAnchor" type="Control" parent="." unique_id=1694396163]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = 2.0
+offset_right = -88.0
+offset_bottom = 42.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="PhoneGraphic" type="TextureRect" parent="PhoneAnchor" unique_id=1491193133]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ugfg3")
+
+[node name="ConfidenceMeter" type="ProgressBar" parent="PhoneAnchor" unique_id=531567882]
+self_modulate = Color(0.12941177, 0.84705883, 0, 1)
+custom_minimum_size = Vector2(0, 100)
+layout_direction = 3
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+value = 100.0
+fill_mode = 3
+show_percentage = false
+
+[node name="DialogueArea" type="PanelContainer" parent="." unique_id=484159620]
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.848
+offset_top = -200.0
+offset_right = -165.15198
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueArea" unique_id=2068089937]
+layout_mode = 2
+
+[node name="DialogueLabel" type="RichTextLabel" parent="DialogueArea/VBoxContainer" unique_id=1034017423]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="ResponsesMenu" type="VBoxContainer" parent="DialogueArea/VBoxContainer" unique_id=149543318]
+layout_mode = 2

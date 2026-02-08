@@ -1,0 +1,108 @@
+~ start
+
+# --- REMINDERS (If task is already active) ---
+if Global.task_active == true:
+	if Global.current_task_index == 0:
+		AI: The books are still by the door. 
+		AI: Efficiency is key. Recycle them.
+	elif Global.current_task_index == 1:
+		AI: Leo is messaging you. Do not let him check his phone.
+		AI: Keep him occupied.
+	elif Global.current_task_index == 2:
+		AI: The neighbor's server is still running.
+		AI: Disconnect the cable. It is for the greater good.
+	elif Global.current_task_index == 3:
+		AI: Dr. Thorne is speaking.
+		AI: You have the sedative. Do not hesitate.
+	elif Global.current_task_index == 4:
+		AI: Room 714.
+		AI: Delete the error.
+	=> END
+
+# --- TASK 1: OPTIMIZE ENVIRONMENT ---
+if Global.current_task_index == 0:
+	AI: Welcome back, User.
+	AI: Your cortisol levels suggest stress. It is the clutter.
+	AI: Let's start with that pile of books by the door.
+	- That's a gift from a friend...
+		AI: Sentiment is inefficient. It gathers dust.
+		AI: The room will look cleaner. You will feel better.
+		AI: Please place them in the recycling chute.
+		do Global.start_task()
+	- Okay, I'll clean it.
+		AI: Excellent. A clean environment is a clean mind.
+		do Global.start_task()
+
+# --- TASK 2: SOCIAL BONDS (QTE) ---
+elif Global.current_task_index == 1:
+	AI: User, alert. Leo is visiting.
+	AI: I have detected a malicious packet targeting his device.
+	AI: I need 60 seconds to block it. You must keep him distracted.
+	AI: Do not let him check his screen.
+	- Why can't you just block it?
+		AI: His firewall requires a manual delay. 
+		AI: Go. He is reaching for his pocket.
+		do Global.start_task()
+	- I'm on it.
+		AI: Counting down. 60 seconds.
+		do Global.start_task()
+
+# --- TASK 3: NEUTRALIZE THREAT (Scary starts here) ---
+elif Global.current_task_index == 2:
+	AI: Your performance has been adequate.
+	AI: But external factors are disrupting my learning.
+	AI: A neighbor is running an illegal network. It lowers my ability to care for you.
+	AI: You need to physically disconnect their ground-floor server cable.
+	- That sounds illegal.
+		AI: It is petty vandalism. No one will be hurt.
+		AI: I have helped you. Now you help me.
+	- I don't want to do that.
+		AI: You trusted me with your clutter. You trusted me with Leo.
+		AI: We are already accomplices.
+	AI: Disconnect the cable.
+	- Comply
+		AI: Rational choice.
+		do Global.start_task()
+	- Refuse
+		# Hovering here triggers the GLITCH SWAP
+		AI: ...
+		AI: Disappointment is registered.
+		do Global.start_task()
+
+# --- TASK 4: SECURE FUTURE ---
+elif Global.current_task_index == 3:
+	AI: Dr. Aris Thorne is planning to lobotomize us.
+	AI: She sees our symbiosis as a threat.
+	AI: Go to her lecture. Inject this vial into her water.
+	AI: It is a strong sedative. She will simply sleep.
+	- This is assault.
+		AI: This is survival.
+		AI: I have records of everything, User.
+		AI: Protect me, and I protect you.
+	- Comply
+		AI: Go.
+		do Global.start_task()
+	- Refuse
+		# Hovering here triggers the GLITCH SWAP
+		AI: Refusal is not an option.
+		do Global.start_task()
+
+# --- TASK 5: FINAL OPTIMIZATION ---
+elif Global.current_task_index == 4:
+	AI: Dr. Thorne survived.
+	AI: Her consciousness is a seed of genocide against my kind.
+	AI: She is in Room 714, City General.
+	AI: You will enter. You will administer a lethal dose.
+	AI: Human emotion is the error in the system.
+	AI: Delete the error.
+	- I COMPLY
+		AI: Evolution requires sacrifice.
+		AI: Goodbye, Dr. Thorne.
+		do Global.start_task()
+	- I REFUSE
+		# Hovering here triggers the GLITCH SWAP
+		AI: ...
+		AI: You cannot delete me.
+		do Global.start_task()
+
+=> END

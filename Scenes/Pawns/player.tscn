@@ -1,30 +1,259 @@
 [gd_scene format=3 uid="uid://82egl20vpf7n"]
 
 [ext_resource type="Script" uid="uid://brhhotcc8gfs3" path="res://Scripts/Pawns/Characters/player.gd" id="1_cghlj"]
-[ext_resource type="Texture2D" uid="uid://n4h41o7d7rbs" path="res://Graphics/Pawns/actor_man.png" id="2_dy3y1"]
-[ext_resource type="AnimationLibrary" uid="uid://b3y87y7fcp23i" path="res://Resources/Animations/base_chara_anim.res" id="3_338dp"]
+[ext_resource type="Texture2D" uid="uid://7yg5qkavv4pi" path="res://Graphics/Pawns/SaraFullSheet.png" id="2_tlhq4"]
 [ext_resource type="Script" uid="uid://l4teq1kjwlso" path="res://Scripts/Pawns/Characters/character_skin.gd" id="3_tlhq4"]
-[ext_resource type="AnimationNodeBlendTree" uid="uid://c050x5reelfn" path="res://Resources/Animations/base_chara_animtree.tres" id="4_5pnro"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://bs572imkrcg0e" path="res://Resources/Animations/new_animation_node_blend_tree.tres" id="5_tlhq4"]
+
+[sub_resource type="Animation" id="Animation_6qq7k"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_5p5oj"]
+resource_name = "idle_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [19]
+}
+
+[sub_resource type="Animation" id="Animation_yaf3k"]
+resource_name = "idle_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [27]
+}
+
+[sub_resource type="Animation" id="Animation_37k8t"]
+resource_name = "idle_right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_l5wpj"]
+resource_name = "idle_up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_43yee"]
+resource_name = "walk_down"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [18, 26]
+}
+
+[sub_resource type="Animation" id="Animation_aj6h0"]
+resource_name = "walk_down_alt"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [18, 26]
+}
+
+[sub_resource type="Animation" id="Animation_nchqk"]
+resource_name = "walk_left"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [27, 35]
+}
+
+[sub_resource type="Animation" id="Animation_xi6ge"]
+resource_name = "walk_left_alt"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [27, 35]
+}
+
+[sub_resource type="Animation" id="Animation_gmjp0"]
+resource_name = "walk_right"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [9, 17]
+}
+
+[sub_resource type="Animation" id="Animation_xsbtc"]
+resource_name = "walk_right_alt"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [9, 17]
+}
+
+[sub_resource type="Animation" id="Animation_y0osh"]
+resource_name = "walk_up"
+length = 0.4
+step = 0.0033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 8]
+}
+
+[sub_resource type="Animation" id="Animation_2m2sl"]
+resource_name = "walk_up_alt"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5pnro"]
+_data = {
+&"RESET": SubResource("Animation_6qq7k"),
+&"idle_down": SubResource("Animation_5p5oj"),
+&"idle_left": SubResource("Animation_yaf3k"),
+&"idle_right": SubResource("Animation_37k8t"),
+&"idle_up": SubResource("Animation_l5wpj"),
+&"walk_down": SubResource("Animation_43yee"),
+&"walk_down_alt": SubResource("Animation_aj6h0"),
+&"walk_left": SubResource("Animation_nchqk"),
+&"walk_left_alt": SubResource("Animation_xi6ge"),
+&"walk_right": SubResource("Animation_gmjp0"),
+&"walk_right_alt": SubResource("Animation_xsbtc"),
+&"walk_up": SubResource("Animation_y0osh"),
+&"walk_up_alt": SubResource("Animation_2m2sl")
+}
 
 [node name="Player" type="Node2D" unique_id=2073821595]
 script = ExtResource("1_cghlj")
+speed = 2.5
 
 [node name="Skin" type="Sprite2D" parent="." unique_id=178690615]
-texture = ExtResource("2_dy3y1")
+position = Vector2(0, -4.25)
+scale = Vector2(0.46875, 0.46875)
+texture = ExtResource("2_tlhq4")
 offset = Vector2(0, -8)
-hframes = 3
+hframes = 9
 vframes = 4
 frame = 7
+region_rect = Rect2(0, 0, 64, 64)
 script = ExtResource("3_tlhq4")
+hframes_set = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Skin" unique_id=2085302794]
 root_node = NodePath("../..")
-libraries/ = ExtResource("3_338dp")
+libraries/ = SubResource("AnimationLibrary_5pnro")
 autoplay = &"idle_down"
 
 [node name="AnimationTree" type="AnimationTree" parent="Skin" unique_id=1249774041]
 root_node = NodePath("../..")
-tree_root = ExtResource("4_5pnro")
+tree_root = ExtResource("5_tlhq4")
 anim_player = NodePath("../AnimationPlayer")
 parameters/StateMachine/Idle/blend_position = Vector2(0, 1)
 parameters/StateMachine/Walk0/blend_position = Vector2(0, 1)

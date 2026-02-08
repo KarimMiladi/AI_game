@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bnicf2xkwc0gx"]
+
+[ext_resource type="Script" uid="uid://crvn7uedtouj" path="res://Scripts/Tasks/task_object.gd" id="1_7ycfn"]
+[ext_resource type="Texture2D" uid="uid://bm8b5ndsw6ckk" path="res://icon.svg" id="2_marw0"]
+
+[node name="Book" type="Node2D" unique_id=1246032636]
+script = ExtResource("1_7ycfn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2033984861]
+scale = Vector2(0.09374999, 0.09375001)
+texture = ExtResource("2_marw0")

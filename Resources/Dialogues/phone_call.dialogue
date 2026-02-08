@@ -1,0 +1,98 @@
+~ start
+
+# Initial State
+do Global.confidence = 100
+Leo: ...
+Leo: (Incoming Video Call: Leo)
+- [ANSWER CALL]
+	=> q1_location
+- [IGNORE]
+	do Global.confidence -= 15
+	Leo: (The phone vibrates violently...)
+	=> start
+
+~ q1_location
+Leo: Finally. Dude, where are you? The group chat shows your GPS is offline.
+- My battery is low.
+	=> q2_incident
+- I disabled it for privacy.
+	do Global.confidence -= 10
+	Leo: You? Mr. "I-Post-My-Breakfast"? Since when do you care about privacy?
+	=> q2_incident
+- I am currently in the living unit.
+	do Global.confidence -= 25
+	Leo: "Living unit"? You mean your apartment? You sound weird.
+	=> q2_incident
+
+~ q2_incident
+Leo: Whatever. Look, about last night... are you still mad about the spilled drinks?
+# TRAP: If you apologize, it's suspicious because maybe he didn't spill drinks.
+- It is fine. Liquid evaporates.
+	do Global.confidence -= 30
+	Leo: "Liquid evaporates"? Okay, stop talking like a robot. It's creeping me out.
+	=> q3_server
+- You owe me a new rug.
+	# Correct answer (Human emotion/Grudge)
+	do Global.confidence += 10
+	Leo: Haha, yeah, yeah. I'll buy you a cleaner.
+	=> q3_server
+- I do not recall this event.
+	do Global.confidence -= 20
+	Leo: You don't recall? You were screaming for twenty minutes.
+	=> q3_server
+
+~ q3_server
+Leo: Anyway, I'm outside. I see a weird van near the server room.
+Leo: Did you touch the cables like you said you would?
+- No.
+	=> q4_check
+- I optimized the connection.
+	do Global.confidence -= 40
+	Leo: Optimized...? The internet is down for the whole block!
+	=> q4_check
+- Yeah, I pulled the plug.
+	# Risky but human
+	Leo: You actually did it? You're crazy.
+	=> q4_check
+
+~ q4_check
+Leo: You're acting super sketch. I'm coming up. Open the door.
+- I am not decent.
+	do Global.confidence -= 10
+	Leo: Since when do you care?
+	=> q5_password
+- No, I'm sick. Don't come in.
+	# Correct answer (Social avoidance)
+	do Global.confidence += 5
+	Leo: Ugh, fine. I don't want your germs.
+	=> q5_password
+- Entry is prohibited.
+	do Global.confidence -= 50
+	Leo: "Entry prohibited"?? Who is this?!
+	=> q5_password
+
+~ q5_password
+Leo: One last thing before I go. 
+Leo: Just so I know you aren't high... what's the name of that girl we hated in High School?
+- Sarah.
+	do Global.confidence -= 20
+	Leo: Sarah is you, idiot.
+	=> failure_trigger
+- Mrs. Gable.
+	# Correct
+	=> success_trigger
+- User 404.
+	do Global.confidence -= 100
+	=> failure_trigger
+
+~ success_trigger
+Leo: Hah! Yeah, Mrs. Gable. Absolute nightmare.
+Leo: Alright, get some sleep. You sound fried.
+do Global.complete_task()
+=> END
+
+~ failure_trigger
+Leo: ... You forgot?
+Leo: You're not him. Stay right there. I'm calling the cops.
+do Global.confidence = 0
+=> END
