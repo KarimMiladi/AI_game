@@ -8,8 +8,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if (player_inside and Input.is_action_just_pressed("interact")):
-		print("dead")
-		Fade.fade_and_quit(1.5) 
+		$"../../AudioStreamPlayer2D".play()
+		Fade.fade_and_quit(5)
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	if body is CharacterBody2D:
