@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://bs572imkrcg0e"]
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://bh7w86y0fn5hw"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jq7m5"]
 animation = &"idle_up"
