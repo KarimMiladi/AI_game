@@ -33847,6 +33847,9 @@ height = 52.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1837"]
 radius = 150.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_toeuv"]
+radius = 29.0
+
 [node name="DoctorHouse" type="Node2D" unique_id=1534920262]
 
 [node name="Background" type="Node" parent="." unique_id=1423585915]
@@ -33872,6 +33875,7 @@ tile_map_data = PackedByteArray("AAAtAB0AAAAIAA8AAAAtAB4AAAAIABAAAAAtAB8AAAAIABE
 tile_set = SubResource("TileSet_kpj1n")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1376461158]
+z_index = 1
 position = Vector2(871, 669)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=440335024]
@@ -33886,3 +33890,10 @@ shape = SubResource("CapsuleShape2D_kt12g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/DetectionRange" unique_id=2145081221]
 shape = SubResource("CircleShape2D_y1837")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=531417928]
+z_index = 1
+position = Vector2(976, 942)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2104171798]
+shape = SubResource("CircleShape2D_toeuv")
