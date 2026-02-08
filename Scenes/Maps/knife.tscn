@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://dda4pkr4muy1y"]
 
+[ext_resource type="Script" uid="uid://p3yqqqnsjv8a" path="res://Scenes/Maps/knife.gd" id="1_767qk"]
 [ext_resource type="Texture2D" uid="uid://ccjrl5vl3wq3o" path="res://knife.png" id="1_mhiat"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_767qk"]
 radius = 23.0
 
 [node name="Knife" type="Area2D" unique_id=547109070]
+script = ExtResource("1_767qk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=818606901]
 texture = ExtResource("1_mhiat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=139360119]
 shape = SubResource("CircleShape2D_767qk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

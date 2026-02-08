@@ -13,5 +13,5 @@ func play_music(path):
 	player.play()
 
 func _process(delta):
-	if GameManager.task == 5:
+	if GameManager.task == 3:
 		play_music("res://1-061. Bs Glade.mp3")

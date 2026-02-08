@@ -2,7 +2,7 @@ extends Node
 
 
 var books = 3
-var task = 1
+var task = 3
 var has_wire = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,5 +11,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if task == 3:
-		Music.player.play
+	pass
