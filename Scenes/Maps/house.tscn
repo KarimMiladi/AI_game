@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://fkia1vlm1kt6" path="res://Scenes/Maps/book.tscn" id="6_yclys"]
 [ext_resource type="Script" uid="uid://bmq0agw2osiub" path="res://Scenes/Maps/bedroom_left.gd" id="7_1t4cs"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hgbee"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skekn"]
 texture = ExtResource("1_2tfi8")
 0:0/0 = 0
 1:0/0 = 0
@@ -6302,7 +6302,7 @@ texture = ExtResource("1_2tfi8")
 
 [sub_resource type="TileSet" id="TileSet_skekn"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_hgbee")
+sources/0 = SubResource("TileSetAtlasSource_skekn")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43xub"]
 texture = ExtResource("1_2tfi8")

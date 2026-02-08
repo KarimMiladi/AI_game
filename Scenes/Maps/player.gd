@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
 const SPEED = 400.0
+var task5_fade_started = false
 
 func _physics_process(delta: float) -> void:
+	if GameManager.task == 5 and not task5_fade_started:
+		task5_fade_started = true
+		Fade.fade_to_scene("res://Scenes/Maps/doctor_house_dark.tscn", 1.0)
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_vector("left", "right","top","bot")

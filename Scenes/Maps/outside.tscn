@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cyljjmrpuy3jm" path="res://9asas_4aw.png" id="5_8ebxq"]
 [ext_resource type="Script" uid="uid://ba5uj87tlxb8f" path="res://Scenes/Maps/power_box.gd" id="5_v6cgt"]
 [ext_resource type="PackedScene" uid="uid://b0orp58je63ri" path="res://Scenes/Maps/player.tscn" id="6_n7npx"]
+[ext_resource type="Script" uid="uid://brmk5w1cekh0v" path="res://Scenes/Maps/house.gd" id="7_e7xcn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwb41"]
 texture = ExtResource("1_unr6j")
@@ -63471,6 +63472,7 @@ shape = SubResource("CircleShape2D_gpvri")
 
 [node name="House" type="Area2D" parent="." unique_id=658825731]
 position = Vector2(576, 269)
+script = ExtResource("7_e7xcn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House" unique_id=1668223170]
 z_index = 1

@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 		queue_free()
 		if(GameManager.books <= 0):
 			GameManager.task += 1
-			print("task 2")
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	if body is CharacterBody2D:

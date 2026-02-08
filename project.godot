@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://brhjkx6kvk5a"
+Music="*uid://c6408j305gxka"
+Fade="*uid://75hjadtlu2c7"
 
 [editor_plugins]
 

@@ -1,5 +1,6 @@
 extends Area2D
 
+var task5_fade_started = false
 var player_inside = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,7 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if (player_inside and Input.is_action_just_pressed("interact")):
-		get_tree().change_scene_to_file("res://Scenes/Maps/outside.tscn")
+		task5_fade_started = true
+		Fade.fade_to_scene("res://Scenes/Maps/outside.tscn", 1.0)
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	if body is CharacterBody2D:
